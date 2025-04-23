@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Referee Admin</title>
+  <link rel="stylesheet" href="styles/admin.css" />
+</head>
+<body>
+  <main>
+    <section class="team" id="team1">
+      <h2 id="team1-name">Team A</h2>
+      <div class="score">
+        <button id="a-minus">−</button>
+        <span id="team1-score">0</span>
+        <button id="a-plus">+</button>
+      </div>
+    </section>
+
+    <section class="team" id="team2">
+      <h2 id="team2-name">Team B</h2>
+      <div class="score">
+        <button id="b-minus">−</button>
+        <span id="team2-score">0</span>
+        <button id="b-plus">+</button>
+      </div>
+    </section>
+
+    <button id="endMatchButton">End Match</button>
+  </main>
+
+  <script src="scripts/switch_mode.js"></script>
+  <script type="module" src="scripts/screen_handlers/admin.js"></script>
+</body>
+</html>

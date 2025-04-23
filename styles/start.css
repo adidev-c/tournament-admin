@@ -1,0 +1,143 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Main body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  /* Light Mode */
+  body.light-mode {
+    background-color: #f5f5f5;
+    color: #212121;
+  }
+  
+  /* Container for centering */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Match Selection Box Styles */
+  .match-selection-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Dark Mode for Match Selection Box */
+  body.dark-mode .match-selection-box {
+    background-color: #333;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Heading styles */
+  .match-selection-box h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  /* Dark Mode Heading */
+  body.dark-mode .match-selection-box h2 {
+    color: #e0e0e0;
+  }
+  
+  /* Label and Select Styles */
+  .match-selection-box label {
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+    display: block;
+  }
+  
+  .match-selection-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  /* Dark Mode Select */
+  body.dark-mode .match-selection-box select {
+    background-color: #555;
+    border-color: #777;
+    color: #e0e0e0;
+  }
+  
+  /* Focus effect on select */
+  .match-selection-box select:focus {
+    border-color: #6200EE;
+  }
+  
+  /* Start Match Button styles */
+  #startMatchButton {
+    width: 100%;
+    padding: 15px;
+    background-color: #6200EE;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Start Match Button Hover */
+  #startMatchButton:hover {
+    background-color: #3700B3;
+  }
+  
+  /* Error Message Styles */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  /* Mobile responsive design */
+  @media (max-width: 500px) {
+    .match-selection-box {
+      padding: 20px;
+    }
+  
+    .match-selection-box h2 {
+      font-size: 24px;
+    }
+  
+    .match-selection-box select,
+    #startMatchButton {
+      font-size: 14px;
+    }
+  }
+  

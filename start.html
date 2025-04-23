@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Selection</title>
+  <link rel="stylesheet" href="styles/start.css">
+</head>
+<body>
+  <div class="container">
+    <div class="match-selection-box">
+      <h2>Select Teams for Match</h2>
+      
+      <label for="team1">Select Team 1</label>
+      <select id="team1" disabled required>
+        <option value="">Loading teams...</option>
+      </select>
+      
+      <label for="team2">Select Team 2</label>
+      <select id="team2" disabled required>
+        <option value="">Loading teams...</option>
+      </select>
+
+      <button id="startMatchButton" disabled>Start Match</button>
+      <p id="errorMessage" class="error-message"></p>
+    </div>
+  </div>
+
+  <script type="module" src="scripts/screen_handlers/start.js"></script>
+  <script src="scripts/switch_mode.js"></script>
+</body>
+</html>
