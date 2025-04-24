@@ -21,5 +21,5 @@ registerButton.addEventListener('click', () => {
 });
 
 end_btn.addEventListener("click",()=>{
-  window.location.href = ''
+  window.location.href = 'index.html';
 })
