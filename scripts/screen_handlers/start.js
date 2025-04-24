@@ -6,7 +6,8 @@ import {
     b_name,
     a_score,
     b_score,
-    status
+    status,
+    live
 } from '../db/firebase.js'
 //accessing elements from ui
 const team1Select = document.getElementById('team1');
@@ -68,11 +69,14 @@ function validateSelection() {
 function deploy_match(team1, team2) {
     const start_score = 0;
     const game_status = "live";
-    set_data(a_name, team1);
-    set_data(b_name, team2);
-    set_data(a_score, start_score);
-    set_data(b_score, start_score);
-    set_data(status,game_status);
+    var match = {};
+    match.teama = {};
+    match.teamb = {};
+    match.teama.name = team1;
+    match.teamb.name = team2;
+    match.teama.score = start_score;
+    match.teamb.score = start_score;
+    set_data(live,match)
 }
 team1Select.addEventListener('change', validateSelection);
 team2Select.addEventListener('change', validateSelection);
