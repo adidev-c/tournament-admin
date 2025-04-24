@@ -10,6 +10,7 @@ This is the live score board for clients for viewing
 etc
 
 This project is setup in two repositories
+
 client side - score board : https://github.com/adidev-c/tournament-score
 
 admin page : https://github.com/adidev-c/tournament-admin
