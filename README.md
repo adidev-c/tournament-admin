@@ -12,10 +12,11 @@ admin page : https://github.com/adidev-c/tournament-admin
 ## What Is This 
 My village was conducting a football tournament. So i decided to make a real time score updating system for it. It was a fun project to develop my skills.
 It was my **first project** in web btw . 
-I cant afford to buy a server or something to make this project available to public 😅.
+I cant afford a server or something to make this project available to public 😅.
 
 So i choosed Google-Firebase 🔥
-Actually i love backend coding but i cant do it in this situation
+
+Actually i love backend coding but i can't do it in this situation
 
 ## About The Project
 This website has no backend , all the processing and database managements are done in frontend.
@@ -36,8 +37,7 @@ The officials can
 - Update Match History
 
 ## Building
-As a frontend only website using traditional html , css , and javascript ,
-this project does'nt need a building
+As a frontend only website using traditional html , css , and javascript,we don't need to compile it to use it
  
 just execute
 ```
