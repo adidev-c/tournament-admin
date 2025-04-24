@@ -11,6 +11,7 @@ import {
     status,
 } from '../db/firebase.js';
 import { onValue } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js";
+//accessing screen elements
 const a_plus = document.getElementById("a-plus");
 const a_minus = document.getElementById("a-minus");
 const b_plus = document.getElementById("b-plus");
@@ -21,22 +22,23 @@ const team_2_name = document.getElementById("team2-name");
 const team_1_score = document.getElementById("team1-score");
 const team_2_score = document.getElementById("team2-score");
 
+//changing score of team1
 function change_score1(snapshot) {
     team_1_score.innerText = snapshot.val();
 }
-
+//changing score of team2
 function change_score2(snapshot) {
     team_2_score.innerText = snapshot.val();
 }
-
+//changing name of team1
 function change_name1(snapshot) {
     team_1_name.innerText = snapshot.val();
 }
-
+//changing name of team2
 function change_name2(snapshot) {
     team_2_name.innerText = snapshot.val();
 }
-
+//reading naames of teams from database
 async function read_names() {
     try {
         const team1 = await get_data(a_name);
@@ -46,7 +48,7 @@ async function read_names() {
         console.error("Error loading data:", error);
     }
 }
-
+//reading scoes of teams from database
 async function read_scores() {
     try {
         const team1_score = await get_data(a_score);
@@ -56,7 +58,7 @@ async function read_scores() {
         console.error("Error loading data:", error);
     }
 }
-
+//init function which loads the screen
 async function load_screen() {
     try {
         const [team1, team2] = await read_names();
@@ -67,15 +69,17 @@ async function load_screen() {
         console.error("Error loading data:", error);
     }
 }
+//setting up the team-1 datas in ui
 function set_team1(name1, score1) {
     team_1_score.innerText = score1;
     team_1_name.innerText = name1;
 }
+//setting up the team-2 datas in ui
 function set_team2(name2, score2) {
     team_2_score.innerText = score2;
     team_2_name.innerText = name2;
 }
-
+//adding real time updates on scores and name changes
 document.addEventListener("DOMContentLoaded", () => {
     onValue(a_score, change_score1);
     onValue(b_score, change_score2);
@@ -85,7 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-//click functions
+/*Light weight data requests and processes can decrease the latency in real time datas
+so this code is arranged in different functions to update each part of the ui ,
+instead of updating all at once which waste bandwidth and processing power
+*/
 a_plus.addEventListener("click", () => {
     let new_score = parseInt(team_1_score.innerText) + 1;
     set_data(a_score, new_score);
@@ -106,7 +113,6 @@ b_minus.addEventListener("click", () => {
     set_data(b_score, new_score);
 })
 
-//end match
 function add_status(match) {
     let scorea = parseInt(team_1_score.innerText);
     let scoreb = parseInt(team_2_score.innerText);
@@ -121,6 +127,7 @@ function add_status(match) {
     return game_status
 }
 
+//match ending processes
 async function end_process() {
     let end = confirm("Are You Sure To End This Match");
     if (end) {

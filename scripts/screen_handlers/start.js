@@ -8,22 +8,22 @@ import {
     b_score,
     status
 } from '../db/firebase.js'
+//accessing elements from ui
 const team1Select = document.getElementById('team1');
 const team2Select = document.getElementById('team2');
 const startMatchButton = document.getElementById('startMatchButton');
 const errorMessage = document.getElementById('errorMessage');
+//fetching teams to load in dropdown
 function fetchTeamData() {
-    // Ensure you are handling the Promise correctly
     get_data(teams).then(registered_teams => {
         if (registered_teams) {
-            const entries = Object.values(registered_teams);  // Now the data is available
-            console.log(entries);  // Log the teams correctly (array of team names)
+            const entries = Object.values(registered_teams); 
+            console.log(entries); 
 
-            // Populate the select dropdowns
             team1Select.innerHTML = `<option value="">Select a team</option>`;
             team2Select.innerHTML = `<option value="">Select a team</option>`;
 
-            // Add teams as options
+            
             entries.forEach(team => {
                 const option1 = document.createElement('option');
                 option1.value = team;
@@ -36,10 +36,10 @@ function fetchTeamData() {
                 team2Select.appendChild(option2);
             });
 
-            // Enable dropdowns after data is loaded
+            
             team1Select.disabled = false;
             team2Select.disabled = false;
-            validateSelection();  // Re-run validation after data is loaded
+            validateSelection(); 
         } else {
             console.log("No teams found.");
         }
@@ -48,7 +48,7 @@ function fetchTeamData() {
     });
 }
 
-
+//validating selections fot same teams in both selection or empty selection
 function validateSelection() {
     const team1 = team1Select.value;
     const team2 = team2Select.value;
@@ -64,7 +64,7 @@ function validateSelection() {
     }
 }
 
-
+//deploy the match to database
 function deploy_match(team1, team2) {
     const start_score = 0;
     const game_status = "live";

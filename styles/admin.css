@@ -104,7 +104,7 @@ main {
 }
 #endMatchButton {
     padding: 15px 30px;
-    background-color: var(--danger); /* Red color for end button */
+    background-color: var(--danger);
     color: white;
     font-size: 18px;
     border: none;
@@ -116,5 +116,5 @@ main {
 }
 
 #endMatchButton:hover {
-    background-color: #9A0000; /* Darker red on hover */
+    background-color: #9A0000; 
 }
