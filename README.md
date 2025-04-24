@@ -3,13 +3,7 @@
 ## _The Live Tournament Score Board Without Any Backend_
 Hi, My name is Adidev and iam a small programmer who loves backend programming.
 
-This is the live score board for clients for viewing 
-- Live scores
-- Live game status
-- Match history 
-etc
-
-This project is setup in two repositories
+This project is distributed across 2 repositories
 
 client side - score board : https://github.com/adidev-c/tournament-score
 
