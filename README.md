@@ -11,6 +11,7 @@ etc
 
 This project is setup in two repositories
 client side - score board : https://github.com/adidev-c/tournament-score
+
 admin page : https://github.com/adidev-c/tournament-admin
 
 ## What Is This 
