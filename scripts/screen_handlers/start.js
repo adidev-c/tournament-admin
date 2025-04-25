@@ -76,7 +76,9 @@ function deploy_match(team1, team2) {
     match.teamb.name = team2;
     match.teama.score = start_score;
     match.teamb.score = start_score;
-    set_data(live,match)
+    set_data(status,game_status);
+    set_data(live,match);
+
 }
 team1Select.addEventListener('change', validateSelection);
 team2Select.addEventListener('change', validateSelection);
